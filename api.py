@@ -1,12 +1,12 @@
 from flask import Flask
 from flask_restful import Resource, Api
 from flask_cors import CORS
-from nbadata import getPlayerID, getTeamID, get_player_season_totals, get_player_college_totals, get_player_picture
-import json
+from nbadata import getPlayerID, getTeamID, get_player_season_totals, get_player_college_totals, get_player_picture, getPlayerName
+
 
 app = Flask(__name__)
-CORS(app)
 api = Api(app)
+CORS(app)
 
 
 class getPlayerInfo(Resource):
@@ -24,7 +24,8 @@ class getTeamInfo(Resource):
 class getPlayerSeasonTotals(Resource):
     def get(self, id):
         seasonTotals = get_player_season_totals(id)
-        return json.dumps(seasonTotals)
+        name = getPlayerName(id)
+        return {'info': seasonTotals, 'name': name}
 
 
 class getPlayerCollegeTotals(Resource):

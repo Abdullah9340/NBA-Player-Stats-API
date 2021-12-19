@@ -24,6 +24,10 @@ def getPlayerID(name):
     return players.find_players_by_full_name(name)
 
 
+def getPlayerName(id):
+    return players.find_player_by_id(id)
+
+
 def get_last_5_games(abrv):
     team = [team for team in nba_teams if team['abbreviation'] == abrv][0]
     team_id = team['id']
