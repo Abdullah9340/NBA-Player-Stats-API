@@ -9,6 +9,11 @@ api = Api(app)
 CORS(app)
 
 
+class homePage(Resource):
+    def get(self):
+        return {'info': 'Hello'}
+
+
 class getPlayerInfo(Resource):
     def get(self, name):
         nbaInfo = getPlayerID(name)
@@ -45,6 +50,6 @@ api.add_resource(getTeamInfo, '/getTeam/<string:name>')
 api.add_resource(getPlayerSeasonTotals, '/getPlayer/seasons/<int:id>')
 api.add_resource(getPlayerCollegeTotals, '/getPlayer/college/<int:id>')
 api.add_resource(getPlayerPicture, '/getPlayer/picture/<int:id>')
-
+api.add_resource(homePage, '/')
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
