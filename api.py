@@ -51,5 +51,6 @@ api.add_resource(getPlayerSeasonTotals, '/getPlayer/seasons/<int:id>')
 api.add_resource(getPlayerCollegeTotals, '/getPlayer/college/<int:id>')
 api.add_resource(getPlayerPicture, '/getPlayer/picture/<int:id>')
 api.add_resource(homePage, '/')
+
 if __name__ == '__main__':
     app.run()

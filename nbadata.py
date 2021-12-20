@@ -1,8 +1,8 @@
-from nba_api.stats.endpoints import leaguegamefinder
-from nba_api.stats.static import teams
+from nba_api.stats.endpoints import playercareerstats
 from nba_api.stats.static import players
 from nba_api.stats.static import teams
-from nba_api.stats.endpoints import playercareerstats
+from nba_api.stats.endpoints import leaguegamefinder
+
 
 nba_teams = teams.get_teams()
 
